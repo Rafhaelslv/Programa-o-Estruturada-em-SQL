@@ -1,5 +1,5 @@
 
---Dado um n˙mero inteiro. Calcule e mostre o seu fatorial. (N„o usar entrada superior a 12)
+--Dado um n√∫mero inteiro. Calcule e mostre o seu fatorial. (N√£o usar entrada superior a 12)
 DECLARE @num1 INT, @FAT INT, @AUX INT
 SET @num1 = 5
 SET @FAT = 1
@@ -13,13 +13,34 @@ SET @AUX = @AUX - 1
 END
 PRINT @FAT
 
---Dados A, B, e C de uma equaÁ„o do 2o grau da fÛrmula AX2+BX+C=0. Verifique e mostre a
---existÍncia de raÌzes reais e se caso exista, calcule e mostre. Caso n„o existam, exibir mensagem.
+--Dados A, B, e C de uma equa√ß√£o do 2o grau da f√≥rmula AX2+BX+C=0. Verifique e mostre a
+--exist√™ncia de ra√≠zes reais e se caso exista, calcule e mostre. Caso n√£o existam, exibir mensagem.
+DECLARE 	@a INT,
+		@b INT,
+		@c INT,
+		@x1 DECIMAL(7, 2),
+		@x2 DECIMAL(7, 2),
+		@d DECIMAL(7,2)
+SET @a = 2
+SET @b = 3
+SET @c = 5
+SET @d = @b*@b - 4 * @a * @c
+IF (@d > 0)
+BEGIN 
+	SET @x1 = (-@b + SQRT(@d)) / 2 * @a
+	SET @x2 = (-@b - SQRT(@d)) / 2 * @a
+	PRINT @x1
+	PRINT @x2
+END
+ELSE
+BEGIN
+	PRINT 'Delta menor que zero!'
+END
 
 
 
 
---Calcule e mostre quantos anos ser„o necess·rios para que Ana seja maior que Maria sabendo
+--Calcule e mostre quantos anos ser√£o necess√°rios para que Ana seja maior que Maria sabendo
 --que Ana tem 1,10 m e cresce 3 cm ao ano e Maria tem 1,5 m e cresce 2 cm ao ano.
 DECLARE @ana real , @maria real, @ano INT
 SET @ana = 1.10
@@ -35,7 +56,7 @@ END
 PRINT @ano
 
 
---Seja a seguinte sÈrie: 1, 4, 4, 2, 5, 5, 3, 6, 6, 4, 7, 7, ...
+--Seja a seguinte s√©rie: 1, 4, 4, 2, 5, 5, 3, 6, 6, 4, 7, 7, ...
 
 DECLARE @num INT, @cont INT, @numx INT
 SET @num = 1
@@ -61,7 +82,7 @@ BEGIN
 END
 
 --Considerando a tabela abaixo, gere uma massa de dados, com 50 registros, para fins de teste
---com as regras estabelecidas (N„o usar constraints na criaÁ„o da tabela)
+--com as regras estabelecidas (N√£o usar constraints na cria√ß√£o da tabela)
 
 CREATE TABLE PRODUTO(
 codigo				int				NOT NULL IDENTITY(50001, 1),
